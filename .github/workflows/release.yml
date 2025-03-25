@@ -58,4 +58,5 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: release-${{ matrix.platform }}
-          path: path/to/generated/output/files/*
+          path: D:/a/r2modmanPlus/r2modmanPlus/dist/electron/*
+
