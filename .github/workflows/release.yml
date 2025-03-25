@@ -23,7 +23,6 @@ jobs:
       - name: Set up Node
         uses: actions/setup-node@v4
         with:
-          # The talk on the street says this might be a good version for building.
           node-version: 20.11.0
           cache: yarn
 
@@ -49,10 +48,14 @@ jobs:
         continue-on-error: true
         run: echo '${{ steps.build.outputs.stderr }}'
 
-      # Creating Electron executables can in some cases fail with exit code 0.
-      # Check the output of build step for obvious signs of failure.
       - if: contains(steps.build.outputs.stderr, '[FAIL]')
         name: Check STDERR for trouble
         uses: actions/github-script@v6
         with:
           script: core.setFailed('It seems the build process failed silently. See previous step for more info.')
+
+      - name: Upload Output Files
+        uses: actions/upload-artifact@v4
+        with:
+          name: release-${{ matrix.platform }}
+          path: path/to/generated/output/files/*
