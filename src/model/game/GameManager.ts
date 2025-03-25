@@ -91,7 +91,7 @@ export default class GameManager {
         new Game("H3VR", "H3VR", "H3VR",
             "H3VR", ["h3vr.exe"], "h3vr_Data",
             "https://thunderstore.io/c/h3vr/api/v1/package-listing-index/",
-            [new StorePlatformMetadata(StorePlatform.STEAM, "450540")], "H3VR.png",
+            [new StorePlatformMetadata(StorePlatform.STEAM, "450540"), new StorePlatformMetadata(StorePlatform.OTHER)], "H3VR.png",
             GameSelectionDisplayMode.VISIBLE, GameInstanceType.GAME, PackageLoader.BEPINEX, ["Hot Dogs, Horseshoes & Hand Grenades", "Hot Dogs, Horseshoes and Hand Grenades"]),
 
         new Game("ROUNDS", "ROUNDS", "ROUNDS",
@@ -453,7 +453,8 @@ export default class GameManager {
         new Game("Shadows of Doubt", "ShadowsofDoubt", "ShadowsofDoubt",
             "Shadows of Doubt", ["Shadows of Doubt.exe"], "ShadowsofDoubt_Data",
             "https://thunderstore.io/c/shadows-of-doubt/api/v1/package-listing-index/",
-            [new StorePlatformMetadata(StorePlatform.STEAM, "986130")], "shadows-of-doubt.jpg",
+            [new StorePlatformMetadata(StorePlatform.STEAM, "986130"), 
+             new StorePlatformMetadata(StorePlatform.OTHER)], "shadows-of-doubt.jpg",
             GameSelectionDisplayMode.VISIBLE, GameInstanceType.GAME, PackageLoader.BEPINEX, ["sod"]),
 
         new Game("Garfield Kart - Furious Racing", "GarfieldKartFuriousRacing", "GarfieldKartFuriousRacing",
